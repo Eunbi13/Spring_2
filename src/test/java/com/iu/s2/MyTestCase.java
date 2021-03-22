@@ -4,6 +4,7 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
@@ -17,11 +18,16 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 									/* 스트링 배열타입 ??-context까지의 파일 경로 적을 거임*/
 						)//배포전, 개발자의 편의를 위해 만들어진 경로, 다 적어야 한다함.
 public class MyTestCase {
-
+	@Autowired 
+	private Car car;
+	
 	
 	@Test
 	public void test1() {
-		System.out.println("Test Method");
+		System.out.println(car.getEngine().getFuel());
+		
 	}
+	
+	
 
 }

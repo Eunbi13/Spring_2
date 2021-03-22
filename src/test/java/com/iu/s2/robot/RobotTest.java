@@ -13,12 +13,14 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 public class RobotTest {
 	@Autowired
 	private Robot robot;
-	
-
-	@Test
+	//private Arm_Left arm_Left;
+	@Test// 이거 달아야 테스트 메서드가 됨
 	public void test() {
-		System.out.println(robot.getArm_Left().getName());
-		System.out.println(robot.getArm_Right().getName());
+		//assertNotNull(arm_Left);
+		assertNotNull(robot.getArm_Left());//이게 왜 널이지,,? 멤버변수에 포함되어있기도하고bean으로 만들어줬는데 왜 null이지,,? 
+		//진짜로 왜 널일까,,객체 생성될 때 선언만 된거라서,, 오토와이어드 같은 초기화가 안되어 있어서 기본값 null이 들어간거임 기본값!=초기화
+
+		assertNotNull(robot.getArm_Right());
 	}
 
 }
